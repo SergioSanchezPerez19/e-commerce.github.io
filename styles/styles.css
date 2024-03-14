@@ -1,26 +1,60 @@
 html {
     box-sizing: border-box;
+    /* Si ponemos esto, 1REM = 10PX */
+    font-size: 62.5%;
 }
 *,
 *:after,
 *:before {
     box-sizing: inherit;
 }
+
+body {
+    font-family: 'Playfair Display', serif;
+    font-optical-sizing: auto;
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
 /** Globales */
+h1,
+h2,
+h3 {
+    font-family: 'Raleway', sans-serif;
+    font-optical-sizing: auto;
+    margin: 0 0 5rem 0;
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
 a {
     text-decoration: none;
     color: black;
 }
 
 .contenedor {
-    max-width: 1200px;
+    max-width: 120rem;
     margin: 0 auto;
+}
+
+img {
+    max-width: 100%;
+    display: block;
 }
 
 /** Header y navegación */
 .nombre-sitio {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 5rem;
     text-align: center;
 }
 
@@ -29,16 +63,66 @@ a {
 }
 
 .contenedor-navegacion {
-    border-top: 1px solid #e1e1e1;
+    border-top: 0.1rem solid #e1e1e1;
 }
 
 .nav-principal {
-    padding: 20px 0px;
+    padding: 2rem 0px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .hero {
     background-image: url(../img/principal.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 550px;
+    background-position: center center;
+    height: 55rem;
+}
+
+/** Categorías */
+.categorias {
+    padding-top: 5rem;
+}
+.categorias h2 {
+    text-align: center;
+}
+
+.categoria a {
+    text-align: center;
+    display: block;
+    padding: 2rem;
+    font-size: 2rem;
+}
+
+.categoria a:hover {
+    background-color: #037bc0;
+    color: white;
+    border-bottom-right-radius: 1rem;
+}
+
+.listado-categorias {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/** Sobre Nosotros */
+.sobre-nosotros {
+    background-image: linear-gradient(to right, transparent 50%, #037bc0 50%, #037bc0 100%), url(../img/nosotros.jpg);
+    background-position: left center;
+    padding: 10rem 0;
+    background-repeat: no-repeat;
+    background-size: 100%, 120rem;
+}
+
+.sobre-nosotros-flex {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.texto-nosotros {
+    flex-basis: 50%;
+    padding-left: 10rem;
+    color: white;
 }
